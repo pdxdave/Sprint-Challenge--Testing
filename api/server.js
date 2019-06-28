@@ -1,6 +1,9 @@
 // bring in express
 const express = require('express');
 
+// bring in model
+const VideoGames = require('../videogames/videogamesModel.js');
+
 // bring in extra tools
 const helmet = require('helmet');
 const cors = require('cors');
@@ -18,6 +21,13 @@ server.use(logger);
 server.get('/', (req, res) => {
     res.status(200).json({ api: 'up'})
 })
+
+// printout games to screen
+server.get('/games', async (req, res) => {
+    const games = await VideoGames.findAll();
+    res.status(200).json(games)
+});
+
 
 
 // logging request methods
