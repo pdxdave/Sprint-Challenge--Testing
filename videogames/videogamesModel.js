@@ -2,10 +2,10 @@ const db = require('../data/dbConfig.js')
 
 module.exports = {
     findAll,
-    findById,
-    remove,
-    insert,
-    update
+    // findById,
+    // remove,
+    insert
+    // update
 }
 
 function findAll(){
