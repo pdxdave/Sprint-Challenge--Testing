@@ -26,7 +26,14 @@ describe('server.js', () => {
             .toEqual({'api': 'up'})
         }) // end of API check
 
+        
+        it('see if JSON is being returned', async () => {
+            const res = await request(server)
+            .get('/')
 
+            expect(res.type)
+            .toBe('application/json')
+       }) // end of JSON check
         
 
 
