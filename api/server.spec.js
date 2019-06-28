@@ -18,7 +18,13 @@ describe('server.js', () => {
         }) // end of 200 OK check
 
         
-       
+        it('should return (api: up)', async () => {
+            const res = await request(server)
+            .get('/')
+
+            expect(res.body)
+            .toEqual({'api': 'up'})
+        }) // end of API check
 
 
         
